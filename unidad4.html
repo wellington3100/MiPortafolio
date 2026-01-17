@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 4 - Implementación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B35',
+                        secondary: '#F7931E',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold">Unidad 4</h1>
+                    <p class="text-sm opacity-90">Implementación</p>
+                </div>
+                <a href="index.html" class="bg-white text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition">
+                    <i class="fas fa-arrow-left mr-2"></i>Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="container mx-auto px-6 py-12">
+        
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Section 1 -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-lightbulb text-primary mr-3"></i>
+                    ¿Qué es la Implementación/Despliegue?
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-4 text-lg">
+                    La implementación es el proceso de llevar tu aplicación del ambiente de desarrollo a producción, donde los usuarios finales pueden acceder a ella. Incluye configurar servidores, dominios, bases de datos y asegurar que todo funcione correctamente en un entorno real y accesible 24/7.
+                </p>
+                <div class="bg-orange-50 border-l-4 border-primary p-5 rounded-lg">
+                    <p class="text-gray-700"><strong class="text-primary text-lg">Analogía:</strong> Es como mudar tu tienda de un almacén de pruebas (desarrollo) a un local comercial en la calle principal (producción) donde los clientes reales pueden visitarte y comprar.</p>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-server text-primary mr-3"></i>
+                    Plataformas de Hosting Populares
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 border-2 border-purple-300 p-6 rounded-lg hover:shadow-xl transition">
+                        <div class="flex items-center mb-3">
+                            <i class="fab fa-github text-purple-700 text-3xl mr-3"></i>
+                            <h3 class="font-bold text-purple-700 text-xl">GitHub Pages</h3>
+                        </div>
+                        <p class="text-gray-600 mb-3">Ideal para sitios estáticos (HTML, CSS, JavaScript)</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>100% Gratis</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>Muy fácil de usar</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>Dominio personalizado</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>HTTPS automático</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gradient-to-br from-teal-50 to-teal-100 border-2 border-teal-300 p-6 rounded-lg hover:shadow-xl transition">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-rocket text-teal-700 text-3xl mr-3"></i>
+                            <h3 class="font-bold text-teal-700 text-xl">Netlify</h3>
+                        </div>
+                        <p class="text-gray-600 mb-3">Para aplicaciones frontend modernas (React, Vue, Angular)</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>Deploy automático desde Git</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>HTTPS gratis incluido</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>Funciones serverless</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>Preview de cada commit</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gradient-to-br from-gray-800 to-black text-white p-6 rounded-lg hover:shadow-xl transition">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-triangle text-white text-3xl mr-3"></i>
+                            <h3 class="font-bold text-white text-xl">Vercel</h3>
+                        </div>
+                        <p class="text-gray-300 mb-3">Optimizado para Next.js, React y aplicaciones modernas</p>
+                        <ul class="text-sm text-gray-300 space-y-1">
+                            <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i>Deploy instantáneo</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i>Edge Functions globales</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i>Analytics incluido</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i>CDN automático</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-600 to-purple-700 text-white p-6 rounded-lg hover:shadow-xl transition">
+                        <div class="flex items-center mb-3">
+                            <i class="fab fa-node-js text-white text-3xl mr-3"></i>
+                            <h3 class="font-bold text-white text-xl">Heroku</h3>
+                        </div>
+                        <p class="text-purple-100 mb-3">Para aplicaciones backend completas con bases de datos</p>
+                        <ul class="text-sm text-purple-100 space-y-1">
+                            <li class="flex items-center"><i class="fas fa-check text-green-300 mr-2"></i>Soporta múltiples lenguajes</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-300 mr-2"></i>Add-ons de bases de datos</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-300 mr-2"></i>Fácilmente escalable</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-300 mr-2"></i>CLI poderoso</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-sync-alt text-primary mr-3"></i>
+                    CI/CD (Integración y Despliegue Continuo)
+                </h2>
+                <p class="text-gray-700 mb-5 text-lg">Automatización del proceso de despliegue para agilizar el desarrollo:</p>
+                <div class="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-lg border border-blue-200">
+                    <div class="space-y-5">
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4 flex-shrink-0">1</div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 text-lg mb-1">Commit a GitHub</h3>
+                                <p class="text-gray-600">Subes tu código al repositorio con un mensaje descriptivo de los cambios realizados.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4 flex-shrink-0">2</div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 text-lg mb-1">Pruebas Automáticas</h3>
+                                <p class="text-gray-600">Se ejecutan tests automatizados para verificar que todo funciona correctamente y no hay errores.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4 flex-shrink-0">3</div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 text-lg mb-1">Build Automático</h3>
+                                <p class="text-gray-600">Se compila, optimiza y prepara la aplicación para producción (minificación, compresión, etc.).</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4 flex-shrink-0">4</div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 text-lg mb-1">Deploy a Producción</h3>
+                                <p class="text-gray-600">Se despliega automáticamente en el servidor y los usuarios ya pueden ver los cambios en vivo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-shield-alt text-primary mr-3"></i>
+                    Seguridad y Optimización
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-lg border-2 border-red-200">
+                        <h3 class="font-bold text-gray-800 mb-4 text-xl flex items-center">
+                            <i class="fas fa-lock text-red-600 text-2xl mr-3"></i>Seguridad
+                        </h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-primary mr-2 mt-1"></i><strong>HTTPS (SSL/TLS):</strong> Encriptación de datos en tránsito</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-primary mr-2 mt-1"></i><strong>Variables de entorno:</strong> Secretos y API keys seguros</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-primary mr-2 mt-1"></i><strong>Validación de inputs:</strong> Prevenir inyecciones SQL y XSS</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-primary mr-2 mt-1"></i><strong>Rate limiting:</strong> Limitar peticiones por usuario</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-primary mr-2 mt-1"></i><strong>CORS:</strong> Control de acceso entre dominios</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-lg border-2 border-green-200">
+                        <h3 class="font-bold text-gray-800 mb-4 text-xl flex items-center">
+                            <i class="fas fa-tachometer-alt text-green-600 text-2xl mr-3"></i>Optimización
+                        </h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-primary mr-2 mt-1"></i><strong>Comprimir archivos:</strong> Gzip/Brotli para menor tamaño</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-primary mr-2 mt-1"></i><strong>Minificar CSS/JS:</strong> Eliminar espacios innecesarios</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-primary mr-2 mt-1"></i><strong>CDN:</strong> Distribuir assets globalmente</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-primary mr-2 mt-1"></i><strong>Caché:</strong> Reducir tiempos de carga</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-primary mr-2 mt-1"></i><strong>Lazy loading:</strong> Cargar imágenes bajo demanda</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-chart-line text-primary mr-3"></i>
+                    Monitoreo y Mantenimiento
+                </h2>
+                <div class="grid md:grid-cols-3 gap-5">
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg text-center border border-blue-200 hover:shadow-lg transition">
+                        <i class="fas fa-heartbeat text-blue-600 text-4xl mb-3"></i>
+                        <h3 class="font-bold text-gray-800 text-lg mb-2">Uptime Monitoring</h3>
+                        <p class="text-sm text-gray-600">Verificar que el sitio esté activo 24/7. Alertas si cae el servidor.</p>
+                        <p class="text-xs text-primary mt-2">Tools: UptimeRobot, Pingdom</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg text-center border border-green-200 hover:shadow-lg transition">
+                        <i class="fas fa-chart-bar text-green-600 text-4xl mb-3"></i>
+                        <h3 class="font-bold text-gray-800 text-lg mb-2">Analytics</h3>
+                        <p class="text-sm text-gray-600">Medir tráfico, comportamiento de usuarios y conversiones.</p>
+                        <p class="text-xs text-primary mt-2">Tools: Google Analytics, Plausible</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg text-center border border-red-200 hover:shadow-lg transition">
+                        <i class="fas fa-bug text-red-600 text-4xl mb-3"></i>
+                        <h3 class="font-bold text-gray-800 text-lg mb-2">Error Tracking</h3>
+                        <p class="text-sm text-gray-600">Detectar y corregir errores en producción automáticamente.</p>
+                        <p class="text-xs text-primary mt-2">Tools: Sentry, LogRocket</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6 -->
+            <div class="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-clipboard-check text-primary mr-3"></i>
+                    Checklist de Despliegue
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-5 rounded-lg border border-orange-200">
+                        <h3 class="font-bold text-primary mb-3 text-lg">✓ Antes del Deploy</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start"><input type="checkbox" class="mr-2 mt-1"> Pruebas locales completas</li>
+                            <li class="flex items-start"><input type="checkbox" class="mr-2 mt-1"> Variables de entorno configuradas</li>
+                            <li class="flex items-start"><input type="checkbox" class="mr-2 mt-1"> Base de datos respaldada</li>
+                            <li class="flex items-start"><input type="checkbox" class="mr-2 mt-1"> Código optimizado y minificado</li>
+                            <li class="flex items-start"><input type="checkbox" class="mr-2 mt-1"> README.md actualizado</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg border border-orange-200">
+                        <h3 class="font-bold text-primary mb-3 text-lg">✓ Después del Deploy</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start"><input type="checkbox" class="mr-2 mt-1"> Verificar funcionalidad principal</li>
+                            <li class="flex items-start"><input type="checkbox" class="mr-2 mt-1"> Probar en diferentes dispositivos</li>
+                            <li class="flex items-start"><input type="checkbox" class="mr-2 mt-1"> Configurar monitoreo y alertas</li>
+                            <li class="flex items-start"><input type="checkbox" class="mr-2 mt-1"> Documentar proceso de deploy</li>
+                            <li class="flex items-start"><input type="checkbox" class="mr-2 mt-1"> Verificar HTTPS activo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-semibold text-lg">Wellington Alvarez & Ivett Estefanía</p>
+            <p class="text-sm opacity-90">Universidad Tecnológica de Coahuila</p>
+            <p class="text-sm opacity-90">Aplicaciones Web a Servicios - 5to Semestre</p>
+        </div>
+    </footer>
+
+</body>
+</html>
