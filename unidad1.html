@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 1 - Introducción al Desarrollo Web Orientado a Servicios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B35',
+                        secondary: '#F7931E',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold">Unidad 1</h1>
+                    <p class="text-sm opacity-90">Introducción al Desarrollo Web Orientado a Servicios</p>
+                </div>
+                <a href="index.html" class="bg-white text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition">
+                    <i class="fas fa-arrow-left mr-2"></i>Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="container mx-auto px-6 py-12">
+        
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Section 1 -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-lightbulb text-primary mr-3"></i>
+                    ¿Qué es el Desarrollo Web Orientado a Servicios?
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-4 text-lg">
+                    El desarrollo web orientado a servicios (SOA - Service Oriented Architecture) es un paradigma de diseño de software que estructura las aplicaciones como un conjunto de servicios independientes y reutilizables que se comunican entre sí a través de protocolos estándar.
+                </p>
+                <div class="bg-orange-50 border-l-4 border-primary p-5 rounded-lg">
+                    <p class="text-gray-700"><strong class="text-primary text-lg">Analogía:</strong> Imagina un restaurante donde cada área (cocina, bar, caja) es un servicio independiente que hace su trabajo específico pero todos colaboran para atender al cliente.</p>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-target text-primary mr-3"></i>
+                    ¿Para qué sirve?
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-recycle text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Reutilización</h3>
+                        </div>
+                        <p class="text-gray-600">Los servicios pueden usarse en múltiples aplicaciones sin duplicar código, ahorrando tiempo y recursos de desarrollo.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-expand-arrows-alt text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Escalabilidad</h3>
+                        </div>
+                        <p class="text-gray-600">Cada servicio puede escalar independientemente según la demanda, optimizando el uso de recursos.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-tools text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Mantenimiento</h3>
+                        </div>
+                        <p class="text-gray-600">Actualizar un servicio no afecta a los demás componentes del sistema, facilitando las mejoras continuas.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-puzzle-piece text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Interoperabilidad</h3>
+                        </div>
+                        <p class="text-gray-600">Servicios en diferentes tecnologías pueden comunicarse fácilmente usando estándares web.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-layer-group text-primary mr-3"></i>
+                    Conceptos Clave
+                </h2>
+                <div class="space-y-5">
+                    <div class="border-l-4 border-primary pl-6 py-3 bg-gray-50 rounded-r-lg">
+                        <h3 class="font-bold text-gray-800 mb-2 text-xl">Servicios Web</h3>
+                        <p class="text-gray-600">Aplicaciones que se comunican a través de Internet usando protocolos estándar como HTTP, SOAP o REST. Permiten que sistemas diferentes trabajen juntos.</p>
+                    </div>
+                    <div class="border-l-4 border-primary pl-6 py-3 bg-gray-50 rounded-r-lg">
+                        <h3 class="font-bold text-gray-800 mb-2 text-xl">API (Application Programming Interface)</h3>
+                        <p class="text-gray-600">Conjunto de reglas y definiciones que permite que diferentes aplicaciones se comuniquen entre sí. Es el "contrato" entre dos sistemas.</p>
+                    </div>
+                    <div class="border-l-4 border-primary pl-6 py-3 bg-gray-50 rounded-r-lg">
+                        <h3 class="font-bold text-gray-800 mb-2 text-xl">REST (Representational State Transfer)</h3>
+                        <p class="text-gray-600">Estilo arquitectónico para diseñar servicios web que usa métodos HTTP estándar (GET, POST, PUT, DELETE). Es el enfoque más popular actualmente.</p>
+                    </div>
+                    <div class="border-l-4 border-primary pl-6 py-3 bg-gray-50 rounded-r-lg">
+                        <h3 class="font-bold text-gray-800 mb-2 text-xl">JSON/XML</h3>
+                        <p class="text-gray-600">Formatos de datos para intercambiar información entre servicios. JSON es más ligero y legible, mientras XML es más estructurado.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-project-diagram text-primary mr-3"></i>
+                    Ejemplo Práctico
+                </h2>
+                <p class="text-gray-700 mb-4 text-lg">
+                    <strong>Aplicación de E-commerce:</strong>
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white p-5 rounded-lg shadow">
+                        <h4 class="font-bold text-primary mb-2 flex items-center">
+                            <i class="fas fa-user-circle mr-2"></i> Servicio de Usuarios
+                        </h4>
+                        <p class="text-gray-600 text-sm">Maneja registro, autenticación, login y gestión de perfiles de usuario.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow">
+                        <h4 class="font-bold text-primary mb-2 flex items-center">
+                            <i class="fas fa-box mr-2"></i> Servicio de Productos
+                        </h4>
+                        <p class="text-gray-600 text-sm">Gestiona catálogo de productos, inventario, precios y categorías.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow">
+                        <h4 class="font-bold text-primary mb-2 flex items-center">
+                            <i class="fas fa-credit-card mr-2"></i> Servicio de Pagos
+                        </h4>
+                        <p class="text-gray-600 text-sm">Procesa transacciones, validaciones de tarjetas y confirmaciones de pago.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow">
+                        <h4 class="font-bold text-primary mb-2 flex items-center">
+                            <i class="fas fa-shipping-fast mr-2"></i> Servicio de Envíos
+                        </h4>
+                        <p class="text-gray-600 text-sm">Calcula costos de envío, genera guías y proporciona rastreo de paquetes.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-semibold text-lg">Wellington Alvarez & Ivett Estefanía</p>
+            <p class="text-sm opacity-90">Universidad Tecnológica de Coahuila</p>
+            <p class="text-sm opacity-90">Aplicaciones Web a Servicios - 5to Semestre</p>
+        </div>
+    </footer>
+
+</body>
+</html>
