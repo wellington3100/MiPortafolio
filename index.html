@@ -63,6 +63,14 @@
         .smooth-scroll {
             scroll-behavior: smooth;
         }
+
+        .section-content {
+            display: none;
+        }
+
+        .section-content.active {
+            display: block;
+        }
     </style>
 </head>
 <body class="bg-gray-50 smooth-scroll">
@@ -142,9 +150,9 @@
                         <p class="text-gray-600 text-sm mb-4">
                             Fundamentos de arquitectura SOA, servicios web y conceptos básicos del desarrollo orientado a servicios.
                         </p>
-                        <a href="#unidad1" class="inline-block bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition-colors font-medium">
+                        <button onclick="showUnit(1)" class="inline-block bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition-colors font-medium w-full">
                             Ver Contenido <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -161,9 +169,9 @@
                         <p class="text-gray-600 text-sm mb-4">
                             Consumo e integración de APIs externas, autenticación, manejo de respuestas y mejores prácticas.
                         </p>
-                        <a href="#unidad2" class="inline-block bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition-colors font-medium">
+                        <button onclick="showUnit(2)" class="inline-block bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition-colors font-medium w-full">
                             Ver Contenido <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -180,9 +188,9 @@
                         <p class="text-gray-600 text-sm mb-4">
                             Creación de APIs RESTful propias, diseño de endpoints, documentación y versionamiento.
                         </p>
-                        <a href="#unidad3" class="inline-block bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition-colors font-medium">
+                        <button onclick="showUnit(3)" class="inline-block bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition-colors font-medium w-full">
                             Ver Contenido <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -199,9 +207,9 @@
                         <p class="text-gray-600 text-sm mb-4">
                             Despliegue de aplicaciones, hosting, CI/CD, optimización y monitoreo de servicios en producción.
                         </p>
-                        <a href="#unidad4" class="inline-block bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition-colors font-medium">
+                        <button onclick="showUnit(4)" class="inline-block bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition-colors font-medium w-full">
                             Ver Contenido <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -209,69 +217,262 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contacto" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">¿Tienes alguna pregunta?</h2>
-                <p class="text-gray-600 mb-8">
-                    Este portafolio es parte del trabajo académico en la materia de Aplicaciones Web a Servicios
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <i class="fas fa-university text-primary text-3xl mb-3"></i>
-                        <h3 class="font-semibold text-gray-800 mb-2">Universidad</h3>
-                        <p class="text-gray-600">Universidad Tecnológica de Coahuila</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <i class="fas fa-users text-primary text-3xl mb-3"></i>
-                        <h3 class="font-semibold text-gray-800 mb-2">Desarrolladores</h3>
-                        <p class="text-gray-600">Wellington Alvarez<br>Ivett Estefanía</p>
-                    </div>
+    <!-- Unit Details Modal -->
+    <div id="unitModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4" onclick="closeModal(event)">
+        <div class="bg-white rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <div class="gradient-bg text-white p-6 sticky top-0 z-10">
+                <div class="flex justify-between items-center">
+                    <h2 id="modalTitle" class="text-2xl md:text-3xl font-bold">Unidad</h2>
+                    <button onclick="closeModal()" class="text-white hover:text-gray-200 text-3xl">&times;</button>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="gradient-bg text-white py-8">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0 text-center md:text-left">
-                    <p class="font-semibold text-lg">Wellington Alvarez & Ivett Estefanía</p>
-                    <p class="text-sm opacity-90">Universidad Tecnológica de Coahuila</p>
-                    <p class="text-sm opacity-90">Aplicaciones Web a Servicios - 5to Semestre</p>
-                </div>
-                <div class="text-center md:text-right">
-                    <p class="text-sm opacity-90 mb-2">© 2025 - Portafolio Académico</p>
-                    <div class="flex gap-4 justify-center md:justify-end">
-                        <a href="#" class="hover:text-gray-200 transition-colors">
-                            <i class="fab fa-github text-2xl"></i>
-                        </a>
-                        <a href="#" class="hover:text-gray-200 transition-colors">
-                            <i class="fas fa-globe text-2xl"></i>
-                        </a>
+            <div class="p-6 md:p-8">
+                <!-- Unidad 1 Content -->
+                <div id="unit1Content" class="section-content">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-lightbulb text-primary mr-3"></i>
+                            ¿Qué es el Desarrollo Web Orientado a Servicios?
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            El desarrollo web orientado a servicios (SOA - Service Oriented Architecture) es un paradigma de diseño de software que estructura las aplicaciones como un conjunto de servicios independientes y reutilizables que se comunican entre sí a través de protocolos estándar.
+                        </p>
+                        <div class="bg-orange-50 border-l-4 border-primary p-4 rounded">
+                            <p class="text-gray-700"><strong class="text-primary">Analogía:</strong> Imagina un restaurante donde cada área (cocina, bar, caja) es un servicio independiente que hace su trabajo específico pero todos colaboran para atender al cliente.</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-target text-primary mr-3"></i>
+                            ¿Para qué sirve?
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-primary mb-2"><i class="fas fa-recycle mr-2"></i>Reutilización</h4>
+                                <p class="text-gray-600 text-sm">Los servicios pueden usarse en múltiples aplicaciones sin duplicar código.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-primary mb-2"><i class="fas fa-expand-arrows-alt mr-2"></i>Escalabilidad</h4>
+                                <p class="text-gray-600 text-sm">Cada servicio puede escalar independientemente según la demanda.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-primary mb-2"><i class="fas fa-tools mr-2"></i>Mantenimiento</h4>
+                                <p class="text-gray-600 text-sm">Actualizar un servicio no afecta a los demás componentes del sistema.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-primary mb-2"><i class="fas fa-puzzle-piece mr-2"></i>Interoperabilidad</h4>
+                                <p class="text-gray-600 text-sm">Servicios en diferentes tecnologías pueden comunicarse fácilmente.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-layer-group text-primary mr-3"></i>
+                            Conceptos Clave
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-primary pl-4">
+                                <h4 class="font-semibold text-gray-800 mb-1">Servicios Web</h4>
+                                <p class="text-gray-600 text-sm">Aplicaciones que se comunican a través de Internet usando protocolos como HTTP, SOAP o REST.</p>
+                            </div>
+                            <div class="border-l-4 border-primary pl-4">
+                                <h4 class="font-semibold text-gray-800 mb-1">API (Application Programming Interface)</h4>
+                                <p class="text-gray-600 text-sm">Conjunto de reglas que permite que diferentes aplicaciones se comuniquen entre sí.</p>
+                            </div>
+                            <div class="border-l-4 border-primary pl-4">
+                                <h4 class="font-semibold text-gray-800 mb-1">REST (Representational State Transfer)</h4>
+                                <p class="text-gray-600 text-sm">Estilo arquitectónico para diseñar servicios web que usa métodos HTTP estándar.</p>
+                            </div>
+                            <div class="border-l-4 border-primary pl-4">
+                                <h4 class="font-semibold text-gray-800 mb-1">JSON/XML</h4>
+                                <p class="text-gray-600 text-sm">Formatos de datos para intercambiar información entre servicios.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-3 flex items-center">
+                            <i class="fas fa-project-diagram text-primary mr-2"></i>
+                            Ejemplo Práctico
+                        </h4>
+                        <p class="text-gray-700 mb-2">
+                            <strong>Aplicación de E-commerce:</strong>
+                        </p>
+                        <ul class="text-gray-600 space-y-1 text-sm">
+                            <li>• <strong>Servicio de Usuarios:</strong> Maneja registro, login y perfiles</li>
+                            <li>• <strong>Servicio de Productos:</strong> Gestiona catálogo e inventario</li>
+                            <li>• <strong>Servicio de Pagos:</strong> Procesa transacciones</li>
+                            <li>• <strong>Servicio de Envíos:</strong> Calcula costos y rastreo</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-    </footer>
 
-    <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+                <!-- Unidad 2 Content -->
+                <div id="unit2Content" class="section-content">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-lightbulb text-primary mr-3"></i>
+                            ¿Qué es la Implementación de API?
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            La implementación de APIs consiste en integrar y consumir servicios externos en nuestras aplicaciones. Es el proceso de conectar tu aplicación con servicios de terceros para obtener datos o funcionalidades adicionales.
+                        </p>
+                        <div class="bg-orange-50 border-l-4 border-primary p-4 rounded">
+                            <p class="text-gray-700"><strong class="text-primary">Analogía:</strong> Es como conectar tu casa a servicios públicos: luz, agua, internet. No produces estos servicios, pero los usas conectándote a ellos.</p>
+                        </div>
+                    </div>
 
-</body>
-</html>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-code text-primary mr-3"></i>
+                            Métodos HTTP Principales
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-green-50 border border-green-200 p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-700 mb-2"><i class="fas fa-download mr-2"></i>GET</h4>
+                                <p class="text-gray-600 text-sm">Obtener datos del servidor sin modificar nada.</p>
+                                <code class="text-xs bg-white p-2 block mt-2 rounded">GET /api/users</code>
+                            </div>
+                            <div class="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-700 mb-2"><i class="fas fa-plus mr-2"></i>POST</h4>
+                                <p class="text-gray-600 text-sm">Crear nuevos recursos en el servidor.</p>
+                                <code class="text-xs bg-white p-2 block mt-2 rounded">POST /api/users</code>
+                            </div>
+                            <div class="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                                <h4 class="font-semibold text-yellow-700 mb-2"><i class="fas fa-edit mr-2"></i>PUT/PATCH</h4>
+                                <p class="text-gray-600 text-sm">Actualizar recursos existentes.</p>
+                                <code class="text-xs bg-white p-2 block mt-2 rounded">PUT /api/users/123</code>
+                            </div>
+                            <div class="bg-red-50 border border-red-200 p-4 rounded-lg">
+                                <h4 class="font-semibold text-red-700 mb-2"><i class="fas fa-trash mr-2"></i>DELETE</h4>
+                                <p class="text-gray-600 text-sm">Eliminar recursos del servidor.</p>
+                                <code class="text-xs bg-white p-2 block mt-2 rounded">DELETE /api/users/123</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-lock text-primary mr-3"></i>
+                            Autenticación de APIs
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2"><i class="fas fa-key text-primary mr-2"></i>API Keys</h4>
+                                <p class="text-gray-600 text-sm mb-2">Clave única que identifica a tu aplicación.</p>
+                                <code class="text-xs bg-white p-2 block rounded">Authorization: Bearer tu_api_key_aqui</code>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2"><i class="fas fa-shield-alt text-primary mr-2"></i>OAuth 2.0</h4>
+                                <p class="text-gray-600 text-sm">Protocolo seguro para autorizar acceso sin compartir contraseñas.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2"><i class="fas fa-fingerprint text-primary mr-2"></i>JWT (JSON Web Tokens)</h4>
+                                <p class="text-gray-600 text-sm">Tokens que contienen información cifrada del usuario.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-3 flex items-center">
+                            <i class="fas fa-laptop-code text-primary mr-2"></i>
+                            Ejemplos de APIs Populares
+                        </h4>
+                        <div class="grid md:grid-cols-2 gap-3 text-sm">
+                            <div class="bg-white p-3 rounded">
+                                <strong class="text-primary">Google Maps API</strong>
+                                <p class="text-gray-600">Integrar mapas y geolocalización</p>
+                            </div>
+                            <div class="bg-white p-3 rounded">
+                                <strong class="text-primary">Stripe API</strong>
+                                <p class="text-gray-600">Procesar pagos en línea</p>
+                            </div>
+                            <div class="bg-white p-3 rounded">
+                                <strong class="text-primary">Twitter API</strong>
+                                <p class="text-gray-600">Publicar y leer tweets</p>
+                            </div>
+                            <div class="bg-white p-3 rounded">
+                                <strong class="text-primary">OpenWeather API</strong>
+                                <p class="text-gray-600">Obtener datos meteorológicos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unidad 3 Content -->
+                <div id="unit3Content" class="section-content">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-lightbulb text-primary mr-3"></i>
+                            ¿Qué es Desarrollar una API?
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Desarrollar una API significa crear tu propio servicio web que otros (o tú mismo) puedan consumir. Es construir los endpoints, la lógica de negocio y las reglas de acceso para que tu aplicación pueda compartir datos y funcionalidades de manera controlada.
+                        </p>
+                        <div class="bg-orange-50 border-l-4 border-primary p-4 rounded">
+                            <p class="text-gray-700"><strong class="text-primary">Analogía:</strong> Es como construir un restaurante con un menú (endpoints) donde los clientes (aplicaciones) pueden pedir platos específicos (datos) siguiendo ciertas reglas.</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-route text-primary mr-3"></i>
+                            Diseño de Endpoints RESTful
+                        </h3>
+                        <div class="bg-gray-50 p-5 rounded-lg">
+                            <p class="text-gray-700 mb-4"><strong>Buenas prácticas para nombrar endpoints:</strong></p>
+                            <div class="space-y-3">
+                                <div class="flex items-start">
+                                    <span class="text-green-600 mr-2">✓</span>
+                                    <div>
+                                        <code class="bg-green-50 px-2 py-1 rounded text-sm">/api/users</code>
+                                        <p class="text-gray-600 text-sm mt-1">Usar sustantivos en plural</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-green-600 mr-2">✓</span>
+                                    <div>
+                                        <code class="bg-green-50 px-2 py-1 rounded text-sm">/api/users/123/posts</code>
+                                        <p class="text-gray-600 text-sm mt-1">Relaciones jerárquicas claras</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-green-600 mr-2">✓</span>
+                                    <div>
+                                        <code class="bg-green-50 px-2 py-1 rounded text-sm">/api/products?category=electronics</code>
+                                        <p class="text-gray-600 text-sm mt-1">Filtros mediante query parameters</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 mr-2">✗</span>
+                                    <div>
+                                        <code class="bg-red-50 px-2 py-1 rounded text-sm">/api/getUsers</code>
+                                        <p class="text-gray-600 text-sm mt-1">Evitar verbos en las URLs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-database text-primary mr-3"></i>
+                            Códigos de Estado HTTP
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-green-50 border-l-4 border-green-500 p-4">
+                                <h4 class="font-semibold text-green-700 mb-2">2xx - Éxito</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li><strong>200:</strong> OK - Solicitud exitosa</li>
+                                    <li><strong>201:</strong> Created - Recurso creado</li>
+                                    <li><strong>204:</strong> No Content - Éxito sin respuesta</li>
+                                </ul>
+                            </div>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-4">
+                                <h4 class="font-semibold text-blue-700 mb-2">3xx - Redirección</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li><strong>301:</strong> Moved Permanently</li>
+                                    <li><strong>304:</strong> Not
