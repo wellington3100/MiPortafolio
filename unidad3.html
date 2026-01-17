@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 3 - Desarrollo de API</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B35',
+                        secondary: '#F7931E',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold">Unidad 3</h1>
+                    <p class="text-sm opacity-90">Desarrollo de una Interfaz de Programación de Aplicaciones (API)</p>
+                </div>
+                <a href="index.html" class="bg-white text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition">
+                    <i class="fas fa-arrow-left mr-2"></i>Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="container mx-auto px-6 py-12">
+        
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Section 1 -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-lightbulb text-primary mr-3"></i>
+                    ¿Qué es Desarrollar una API?
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-4 text-lg">
+                    Desarrollar una API significa crear tu propio servicio web que otros desarrolladores (o tú mismo) puedan consumir. Es construir los endpoints, la lógica de negocio y las reglas de acceso para que tu aplicación pueda compartir datos y funcionalidades de manera controlada y segura.
+                </p>
+                <div class="bg-orange-50 border-l-4 border-primary p-5 rounded-lg">
+                    <p class="text-gray-700"><strong class="text-primary text-lg">Analogía:</strong> Es como construir un restaurante con un menú (endpoints) donde los clientes (aplicaciones) pueden pedir platos específicos (datos) siguiendo ciertas reglas de servicio.</p>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-route text-primary mr-3"></i>
+                    Diseño de Endpoints RESTful
+                </h2>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <p class="text-gray-700 mb-5 font-semibold text-lg">Buenas prácticas para nombrar endpoints:</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start bg-white p-4 rounded-lg border-l-4 border-green-500">
+                            <span class="text-green-600 text-2xl mr-3">✓</span>
+                            <div class="flex-1">
+                                <code class="bg-green-50 px-3 py-2 rounded text-sm font-mono block mb-2">/api/users</code>
+                                <p class="text-gray-600 text-sm"><strong>Usar sustantivos en plural</strong> - Los recursos deben ser nombres, no verbos</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-white p-4 rounded-lg border-l-4 border-green-500">
+                            <span class="text-green-600 text-2xl mr-3">✓</span>
+                            <div class="flex-1">
+                                <code class="bg-green-50 px-3 py-2 rounded text-sm font-mono block mb-2">/api/users/123/posts</code>
+                                <p class="text-gray-600 text-sm"><strong>Relaciones jerárquicas claras</strong> - Muestra la relación entre recursos</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-white p-4 rounded-lg border-l-4 border-green-500">
+                            <span class="text-green-600 text-2xl mr-3">✓</span>
+                            <div class="flex-1">
+                                <code class="bg-green-50 px-3 py-2 rounded text-sm font-mono block mb-2">/api/products?category=electronics&sort=price</code>
+                                <p class="text-gray-600 text-sm"><strong>Filtros mediante query parameters</strong> - Para búsquedas y filtrado de datos</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-white p-4 rounded-lg border-l-4 border-red-500">
+                            <span class="text-red-600 text-2xl mr-3">✗</span>
+                            <div class="flex-1">
+                                <code class="bg-red-50 px-3 py-2 rounded text-sm font-mono block mb-2">/api/getUsers</code>
+                                <p class="text-gray-600 text-sm"><strong>Evitar verbos en las URLs</strong> - El método HTTP ya indica la acción</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-database text-primary mr-3"></i>
+                    Códigos de Estado HTTP
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-green-50 border-l-4 border-green-500 p-5 rounded-lg">
+                        <h3 class="font-bold text-green-700 mb-3 text-xl flex items-center">
+                            <i class="fas fa-check-circle mr-2"></i>2xx - Éxito
+                        </h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <span class="font-mono bg-green-100 px-2 py-1 rounded mr-2">200</span>
+                                <span><strong>OK</strong> - Solicitud procesada correctamente</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-mono bg-green-100 px-2 py-1 rounded mr-2">201</span>
+                                <span><strong>Created</strong> - Recurso creado exitosamente</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-mono bg-green-100 px-2 py-1 rounded mr-2">204</span>
+                                <span><strong>No Content</strong> - Éxito sin contenido en respuesta</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-lg">
+                        <h3 class="font-bold text-blue-700 mb-3 text-xl flex items-center">
+                            <i class="fas fa-exchange-alt mr-2"></i>3xx - Redirección
+                        </h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <span class="font-mono bg-blue-100 px-2 py-1 rounded mr-2">301</span>
+                                <span><strong>Moved Permanently</strong> - URL cambiada permanentemente</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-mono bg-blue-100 px-2 py-1 rounded mr-2">304</span>
+                                <span><strong>Not Modified</strong> - Usar versión en caché</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-5 rounded-lg">
+                        <h3 class="font-bold text-yellow-700 mb-3 text-xl flex items-center">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>4xx - Error del Cliente
+                        </h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <span class="font-mono bg-yellow-100 px-2 py-1 rounded mr-2">400</span>
+                                <span><strong>Bad Request</strong> - Datos enviados inválidos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-mono bg-yellow-100 px-2 py-1 rounded mr-2">401</span>
+                                <span><strong>Unauthorized</strong> - Falta autenticación</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-mono bg-yellow-100 px-2 py-1 rounded mr-2">404</span>
+                                <span><strong>Not Found</strong> - Recurso no encontrado</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 border-l-4 border-red-500 p-5 rounded-lg">
+                        <h3 class="font-bold text-red-700 mb-3 text-xl flex items-center">
+                            <i class="fas fa-times-circle mr-2"></i>5xx - Error del Servidor
+                        </h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <span class="font-mono bg-red-100 px-2 py-1 rounded mr-2">500</span>
+                                <span><strong>Internal Server Error</strong> - Error genérico del servidor</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-mono bg-red-100 px-2 py-1 rounded mr-2">503</span>
+                                <span><strong>Service Unavailable</strong> - Servidor temporalmente no disponible</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-book text-primary mr-3"></i>
+                    Documentación de API
+                </h2>
+                <p class="text-gray-700 mb-5 text-lg">Una buena API necesita documentación clara y completa. Herramientas populares:</p>
+                <div class="grid md:grid-cols-3 gap-5">
+                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-lg text-center border border-blue-200 hover:shadow-lg transition">
+                        <i class="fas fa-file-code text-primary text-4xl mb-3"></i>
+                        <h3 class="font-bold text-gray-800 text-lg mb-2">Swagger/OpenAPI</h3>
+                        <p class="text-sm text-gray-600">Genera documentación interactiva automáticamente desde tu código. Permite probar endpoints directamente.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg text-center border border-orange-200 hover:shadow-lg transition">
+                        <i class="fas fa-rocket text-primary text-4xl mb-3"></i>
+                        <h3 class="font-bold text-gray-800 text-lg mb-2">Postman</h3>
+                        <p class="text-sm text-gray-600">Herramienta para probar APIs y generar documentación colaborativa con ejemplos de uso.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-lg text-center border border-green-200 hover:shadow-lg transition">
+                        <i class="fas fa-markdown text-primary text-4xl mb-3"></i>
+                        <h3 class="font-bold text-gray-800 text-lg mb-2">README.md</h3>
+                        <p class="text-sm text-gray-600">Documentación en formato Markdown, simple pero efectiva para proyectos pequeños.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-tools text-primary mr-3"></i>
+                    Tecnologías Comunes para Desarrollo de APIs
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-5 rounded-lg shadow">
+                        <h3 class="font-bold text-primary mb-3 text-lg flex items-center">
+                            <i class="fas fa-server mr-2"></i>Backend Frameworks
+                        </h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center"><i class="fab fa-node-js text-green-600 mr-2"></i><strong>Node.js + Express</strong> - JavaScript en el servidor</li>
+                            <li class="flex items-center"><i class="fab fa-python text-blue-600 mr-2"></i><strong>Python + Django/Flask</strong> - Rápido y poderoso</li>
+                            <li class="flex items-center"><i class="fab fa-java text-red-600 mr-2"></i><strong>Java + Spring Boot</strong> - Empresarial y robusto</li>
+                            <li class="flex items-center"><i class="fab fa-php text-purple-600 mr-2"></i><strong>PHP + Laravel</strong> - Popular y versátil</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow">
+                        <h3 class="font-bold text-primary mb-3 text-lg flex items-center">
+                            <i class="fas fa-database mr-2"></i>Bases de Datos
+                        </h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-leaf text-green-600 mr-2"></i><strong>MongoDB</strong> - NoSQL flexible y escalable</li>
+                            <li class="flex items-center"><i class="fas fa-elephant text-blue-600 mr-2"></i><strong>PostgreSQL</strong> - SQL robusto y open source</li>
+                            <li class="flex items-center"><i class="fas fa-database text-orange-600 mr-2"></i><strong>MySQL</strong> - SQL popular y confiable</li>
+                            <li class="flex items-center"><i class="fas fa-bolt text-red-600 mr-2"></i><strong>Redis</strong> - Caché ultra rápido</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-semibold text-lg">Wellington Alvarez & Ivett Estefanía</p>
+            <p class="text-sm opacity-90">Universidad Tecnológica de Coahuila</p>
+            <p class="text-sm opacity-90">Aplicaciones Web a Servicios - 5to Semestre</p>
+        </div>
+    </footer>
+
+</body>
+</html>
