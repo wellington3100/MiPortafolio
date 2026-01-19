@@ -210,6 +210,7 @@ Para más información o sugerencias:
  
  GitHub: @wellington3100(https://github.com/wellington3100)
 
+ Discord: well1ngton
+
 ---
 
- **Si te gusta este proyecto, no olvides darle una estrella en GitHub** ⭐
