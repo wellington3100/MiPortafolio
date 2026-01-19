@@ -205,7 +205,9 @@ Este proyecto fue desarrollado con fines académicos. Libre para uso educativo y
 Para más información o sugerencias:
 
  Email: Wellintgonaav@outlook.com 
+ 
  LinkedIn: https://www.linkedin.com/in/w%C3%A9llington-%C3%A1lvarez-varela-318aba252/
+ 
  GitHub: @wellington3100(https://github.com/wellington3100)
 
 ---
