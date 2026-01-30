@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unidad 2 - Implementación de API</title>
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -17,35 +19,56 @@
             }
         }
     </script>
+
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Fonts & Styles -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         * { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); }
+        .gradient-bg {
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+        }
     </style>
 </head>
+
 <body class="bg-gray-50">
-    
+
     <!-- Header -->
     <header class="gradient-bg text-white shadow-lg">
         <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center flex-wrap gap-4">
                 <div>
                     <h1 class="text-2xl md:text-3xl font-bold">Unidad 2</h1>
                     <p class="text-sm opacity-90">Implementación de API</p>
                 </div>
-                <a href="index.html" class="bg-white text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition">
-                    <i class="fas fa-arrow-left mr-2"></i>Volver al Inicio
-                </a>
+
+                <!-- Botones -->
+                <div class="flex gap-3 flex-wrap">
+                    <a href="U2-SH1.pdf" download
+                       class="bg-white text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition shadow-md">
+                        <i class="fas fa-file-pdf mr-2"></i>Descargar PDF
+                    </a>
+
+                    <a href="U2-SH1.pdf" target="_blank"
+                       class="bg-white text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition shadow-md">
+                        <i class="fas fa-eye mr-2"></i>Ver PDF
+                    </a>
+
+                    <a href="index.html"
+                       class="bg-white text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition shadow-md">
+                        <i class="fas fa-arrow-left mr-2"></i>Volver al Inicio
+                    </a>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Content -->
     <main class="container mx-auto px-6 py-12">
-        
         <div class="max-w-4xl mx-auto">
-            
+
             <!-- Section 1 -->
             <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
                 <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
@@ -53,10 +76,15 @@
                     ¿Qué es la Implementación de API?
                 </h2>
                 <p class="text-gray-700 leading-relaxed mb-4 text-lg">
-                    La implementación de APIs consiste en integrar y consumir servicios externos en nuestras aplicaciones. Es el proceso de conectar tu aplicación con servicios de terceros para obtener datos o funcionalidades adicionales sin tener que desarrollarlas desde cero.
+                    La implementación de APIs consiste en integrar y consumir servicios externos en nuestras aplicaciones.
+                    Es el proceso de conectar tu aplicación con servicios de terceros para obtener datos o funcionalidades
+                    adicionales sin tener que desarrollarlas desde cero.
                 </p>
                 <div class="bg-orange-50 border-l-4 border-primary p-5 rounded-lg">
-                    <p class="text-gray-700"><strong class="text-primary text-lg">Analogía:</strong> Es como conectar tu casa a servicios públicos: luz, agua, internet. No produces estos servicios, pero los usas conectándote a ellos de manera eficiente.</p>
+                    <p class="text-gray-700">
+                        <strong class="text-primary text-lg">Analogía:</strong>
+                        Es como conectar tu casa a servicios públicos: luz, agua, internet.
+                    </p>
                 </div>
             </div>
 
@@ -66,42 +94,26 @@
                     <i class="fas fa-code text-primary mr-3"></i>
                     Métodos HTTP Principales
                 </h2>
+
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-green-50 border-2 border-green-300 p-6 rounded-lg">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-download text-green-700 text-3xl mr-3"></i>
-                            <h3 class="font-bold text-green-700 text-2xl">GET</h3>
-                        </div>
-                        <p class="text-gray-600 mb-3">Obtener datos del servidor sin modificar nada. Es una operación de solo lectura.</p>
-                        <code class="text-sm bg-white p-3 block rounded border border-green-200">GET /api/users</code>
-                        <p class="text-xs text-gray-500 mt-2">Ejemplo: Obtener lista de usuarios</p>
+                        <h3 class="font-bold text-green-700 text-2xl mb-2">GET</h3>
+                        <code class="text-sm bg-white p-3 block rounded border">GET /api/users</code>
                     </div>
+
                     <div class="bg-blue-50 border-2 border-blue-300 p-6 rounded-lg">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-plus text-blue-700 text-3xl mr-3"></i>
-                            <h3 class="font-bold text-blue-700 text-2xl">POST</h3>
-                        </div>
-                        <p class="text-gray-600 mb-3">Crear nuevos recursos en el servidor. Envía datos en el cuerpo de la petición.</p>
-                        <code class="text-sm bg-white p-3 block rounded border border-blue-200">POST /api/users</code>
-                        <p class="text-xs text-gray-500 mt-2">Ejemplo: Registrar un nuevo usuario</p>
+                        <h3 class="font-bold text-blue-700 text-2xl mb-2">POST</h3>
+                        <code class="text-sm bg-white p-3 block rounded border">POST /api/users</code>
                     </div>
+
                     <div class="bg-yellow-50 border-2 border-yellow-300 p-6 rounded-lg">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-edit text-yellow-700 text-3xl mr-3"></i>
-                            <h3 class="font-bold text-yellow-700 text-2xl">PUT/PATCH</h3>
-                        </div>
-                        <p class="text-gray-600 mb-3">Actualizar recursos existentes. PUT reemplaza completo, PATCH parcial.</p>
-                        <code class="text-sm bg-white p-3 block rounded border border-yellow-200">PUT /api/users/123</code>
-                        <p class="text-xs text-gray-500 mt-2">Ejemplo: Actualizar perfil de usuario</p>
+                        <h3 class="font-bold text-yellow-700 text-2xl mb-2">PUT / PATCH</h3>
+                        <code class="text-sm bg-white p-3 block rounded border">PUT /api/users/123</code>
                     </div>
+
                     <div class="bg-red-50 border-2 border-red-300 p-6 rounded-lg">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-trash text-red-700 text-3xl mr-3"></i>
-                            <h3 class="font-bold text-red-700 text-2xl">DELETE</h3>
-                        </div>
-                        <p class="text-gray-600 mb-3">Eliminar recursos del servidor de forma permanente.</p>
-                        <code class="text-sm bg-white p-3 block rounded border border-red-200">DELETE /api/users/123</code>
-                        <p class="text-xs text-gray-500 mt-2">Ejemplo: Eliminar cuenta de usuario</p>
+                        <h3 class="font-bold text-red-700 text-2xl mb-2">DELETE</h3>
+                        <code class="text-sm bg-white p-3 block rounded border">DELETE /api/users/123</code>
                     </div>
                 </div>
             </div>
@@ -112,30 +124,12 @@
                     <i class="fas fa-lock text-primary mr-3"></i>
                     Autenticación de APIs
                 </h2>
-                <div class="space-y-5">
-                    <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg border border-purple-200">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-key text-primary text-2xl mr-3"></i>
-                            <h3 class="font-bold text-gray-800 text-xl">API Keys</h3>
-                        </div>
-                        <p class="text-gray-600 mb-3">Clave única que identifica a tu aplicación ante el servicio API. Es el método más simple de autenticación.</p>
-                        <code class="text-sm bg-white p-3 block rounded border">Authorization: Bearer tu_api_key_aqui</code>
-                    </div>
-                    <div class="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-lg border border-blue-200">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-shield-alt text-primary text-2xl mr-3"></i>
-                            <h3 class="font-bold text-gray-800 text-xl">OAuth 2.0</h3>
-                        </div>
-                        <p class="text-gray-600">Protocolo seguro para autorizar acceso sin compartir contraseñas. Usado por Google, Facebook, Twitter para "Iniciar sesión con..."</p>
-                    </div>
-                    <div class="bg-gradient-to-r from-green-50 to-teal-50 p-6 rounded-lg border border-green-200">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-fingerprint text-primary text-2xl mr-3"></i>
-                            <h3 class="font-bold text-gray-800 text-xl">JWT (JSON Web Tokens)</h3>
-                        </div>
-                        <p class="text-gray-600">Tokens que contienen información cifrada del usuario. Muy usados en aplicaciones modernas por su seguridad y portabilidad.</p>
-                    </div>
-                </div>
+
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li><strong>API Keys:</strong> Clave única para identificar tu app.</li>
+                    <li><strong>OAuth 2.0:</strong> Autorización sin compartir contraseñas.</li>
+                    <li><strong>JWT:</strong> Tokens seguros con información del usuario.</li>
+                </ul>
             </div>
 
             <!-- Section 4 -->
@@ -144,40 +138,16 @@
                     <i class="fas fa-laptop-code text-primary mr-3"></i>
                     Ejemplos de APIs Populares
                 </h2>
-                <div class="grid md:grid-cols-2 gap-5">
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-map-marked-alt text-primary text-3xl mr-3"></i>
-                            <h4 class="font-bold text-primary text-lg">Google Maps API</h4>
-                        </div>
-                        <p class="text-gray-600">Integrar mapas interactivos, geolocalización, cálculo de rutas y búsqueda de lugares en tu aplicación.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
-                        <div class="flex items-center mb-3">
-                            <i class="fab fa-stripe text-primary text-3xl mr-3"></i>
-                            <h4 class="font-bold text-primary text-lg">Stripe API</h4>
-                        </div>
-                        <p class="text-gray-600">Procesar pagos en línea de forma segura, suscripciones, facturación y gestión de tarjetas de crédito.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
-                        <div class="flex items-center mb-3">
-                            <i class="fab fa-twitter text-primary text-3xl mr-3"></i>
-                            <h4 class="font-bold text-primary text-lg">Twitter API</h4>
-                        </div>
-                        <p class="text-gray-600">Publicar tweets, leer timeline, buscar menciones y analizar tendencias de redes sociales.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-cloud-sun text-primary text-3xl mr-3"></i>
-                            <h4 class="font-bold text-primary text-lg">OpenWeather API</h4>
-                        </div>
-                        <p class="text-gray-600">Obtener datos meteorológicos en tiempo real, pronósticos, alertas climáticas y mapas de temperatura.</p>
-                    </div>
-                </div>
+
+                <ul class="space-y-3 text-gray-700">
+                    <li>🌍 Google Maps API</li>
+                    <li>💳 Stripe API</li>
+                    <li>🐦 Twitter API</li>
+                    <li>☁️ OpenWeather API</li>
+                </ul>
             </div>
 
         </div>
-
     </main>
 
     <!-- Footer -->
