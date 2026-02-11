@@ -133,7 +133,7 @@
             </div>
 
             <!-- Section 4 -->
-            <div class="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl shadow-lg p-8">
+            <div class="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl shadow-lg p-8 mb-8">
                 <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
                     <i class="fas fa-laptop-code text-primary mr-3"></i>
                     Ejemplos de APIs Populares
@@ -147,6 +147,285 @@
                 </ul>
             </div>
 
+            <!-- NUEVAS SECCIONES TIPO "SABER" -->
+
+            <!-- Section - Saber (PDF Upload) -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-book text-primary mr-3"></i>
+                    Saber - Fundamentos Teóricos
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                    Explora los fundamentos teóricos de la implementación de APIs, incluyendo geolocalización, integración con redes sociales, conexión a bases de datos, uso de plataformas online y servicios de streaming.
+                </p>
+                <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-lg border-2 border-primary">
+                    <div id="pdfUploadSection">
+                        <div class="flex items-center justify-between flex-wrap gap-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-file-pdf text-red-600 text-4xl mr-4"></i>
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-xl mb-1">Documento: Implementación de API - Temas Fundamentales</h3>
+                                    <p class="text-gray-600 text-sm">Sube el documento PDF con el contenido teórico completo</p>
+                                </div>
+                            </div>
+                            <label for="pdfInput" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary transition flex items-center whitespace-nowrap cursor-pointer">
+                                <i class="fas fa-upload mr-2"></i>Subir PDF
+                            </label>
+                            <input type="file" id="pdfInput" accept=".pdf" class="hidden">
+                        </div>
+                    </div>
+                    <div id="pdfViewSection" class="hidden">
+                        <div class="flex items-center justify-between flex-wrap gap-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-file-pdf text-red-600 text-4xl mr-4"></i>
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-xl mb-1" id="pdfFileName">Documento cargado</h3>
+                                    <p class="text-gray-600 text-sm">Documento teórico completo sobre APIs, geolocalización, redes sociales, bases de datos y streaming</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="viewPDF()" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary transition flex items-center whitespace-nowrap">
+                                    <i class="fas fa-eye mr-2"></i>Ver PDF
+                                </button>
+                                <button onclick="changePDF()" class="bg-gray-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-600 transition flex items-center whitespace-nowrap">
+                                    <i class="fas fa-exchange-alt mr-2"></i>Cambiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Geolocalización -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-map-marker-alt text-primary mr-3"></i>
+                    Geolocalización
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                    La geolocalización es una tecnología que permite determinar la ubicación geográfica real de un dispositivo conectado a Internet. Las APIs de geolocalización permiten a las aplicaciones web acceder a las coordenadas GPS del usuario para ofrecer servicios basados en su ubicación.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-route text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Navegación GPS</h3>
+                        </div>
+                        <p class="text-gray-600">Aplicaciones como Google Maps y Waze utilizan APIs de geolocalización para proporcionar rutas en tiempo real.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-store text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Servicios Locales</h3>
+                        </div>
+                        <p class="text-gray-600">Búsqueda de restaurantes, tiendas y servicios cercanos basados en tu ubicación actual.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-shipping-fast text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Rastreo de Entregas</h3>
+                        </div>
+                        <p class="text-gray-600">Seguimiento en tiempo real de pedidos y paquetes con ubicación precisa del repartidor.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-cloud-sun text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Clima Local</h3>
+                        </div>
+                        <p class="text-gray-600">Información meteorológica personalizada según tu ubicación geográfica exacta.</p>
+                    </div>
+                </div>
+                <div class="bg-orange-50 border-l-4 border-primary p-5 rounded-lg mt-6">
+                    <p class="text-gray-700">
+                        <strong class="text-primary text-lg">Ejemplos de APIs:</strong> Google Maps API, Mapbox, OpenStreetMap, HTML5 Geolocation API
+                    </p>
+                </div>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-share-alt text-primary mr-3"></i>
+                    Redes Sociales
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                    Las APIs de redes sociales permiten integrar funcionalidades sociales en aplicaciones web, como compartir contenido, autenticación con perfiles sociales, publicación automatizada y análisis de interacciones. Facilitan la conexión entre tu aplicación y plataformas como Facebook, Twitter, Instagram y LinkedIn.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fab fa-facebook text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Inicio de Sesión Social</h3>
+                        </div>
+                        <p class="text-gray-600">Permite a los usuarios registrarse e iniciar sesión usando sus cuentas de redes sociales (Facebook, Google, Twitter).</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-share-nodes text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Compartir Contenido</h3>
+                        </div>
+                        <p class="text-gray-600">Botones para compartir artículos, imágenes o productos directamente en redes sociales con un solo clic.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-chart-line text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Análisis y Métricas</h3>
+                        </div>
+                        <p class="text-gray-600">Recopilación de datos sobre interacciones, alcance, engagement y estadísticas de publicaciones.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fab fa-instagram text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Publicación Automatizada</h3>
+                        </div>
+                        <p class="text-gray-600">Programación y publicación de contenido en múltiples plataformas sociales desde una sola aplicación.</p>
+                    </div>
+                </div>
+                <div class="bg-orange-50 border-l-4 border-primary p-5 rounded-lg mt-6">
+                    <p class="text-gray-700">
+                        <strong class="text-primary text-lg">Ejemplos de APIs:</strong> Facebook Graph API, Twitter API, Instagram Basic Display API, LinkedIn API, TikTok API
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bases de Datos -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-database text-primary mr-3"></i>
+                    Bases de Datos
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                    Las APIs de bases de datos permiten a las aplicaciones interactuar con sistemas de almacenamiento de datos de manera programática. Facilitan operaciones CRUD (Crear, Leer, Actualizar, Eliminar) y proporcionan acceso seguro a información almacenada tanto en bases de datos relacionales como NoSQL.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-table text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Bases de Datos Relacionales</h3>
+                        </div>
+                        <p class="text-gray-600">MySQL, PostgreSQL, SQL Server - organizan datos en tablas con relaciones estructuradas y consultas SQL.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-sitemap text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Bases de Datos NoSQL</h3>
+                        </div>
+                        <p class="text-gray-600">MongoDB, Firebase, Cassandra - almacenamiento flexible de documentos JSON, ideal para datos no estructurados.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-cloud text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Bases de Datos en la Nube</h3>
+                        </div>
+                        <p class="text-gray-600">Amazon RDS, Google Cloud SQL, Azure SQL - servicios administrados que eliminan la complejidad del mantenimiento.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-bolt text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Bases de Datos en Tiempo Real</h3>
+                        </div>
+                        <p class="text-gray-600">Firebase Realtime Database, Supabase - sincronización instantánea de datos entre usuarios y dispositivos.</p>
+                    </div>
+                </div>
+                <div class="bg-orange-50 border-l-4 border-primary p-5 rounded-lg mt-6">
+                    <p class="text-gray-700">
+                        <strong class="text-primary text-lg">Ejemplos de APIs:</strong> Firebase API, MongoDB Atlas API, Supabase API, Amazon DynamoDB API
+                    </p>
+                </div>
+            </div>
+
+            <!-- Plataformas On-Line -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-globe text-primary mr-3"></i>
+                    Plataformas On-Line
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                    Las APIs de plataformas online permiten integrar servicios de terceros en aplicaciones web, incluyendo procesamiento de pagos, almacenamiento en la nube, gestión de proyectos, comunicaciones y más. Estas integraciones amplían las capacidades de tu aplicación sin necesidad de desarrollar toda la funcionalidad desde cero.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-credit-card text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Pagos en Línea</h3>
+                        </div>
+                        <p class="text-gray-600">Stripe, PayPal, MercadoPago - procesamiento seguro de transacciones y gestión de suscripciones.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-cloud-upload-alt text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Almacenamiento en la Nube</h3>
+                        </div>
+                        <p class="text-gray-600">Google Drive, Dropbox, Amazon S3 - almacenamiento y sincronización de archivos en la nube.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-envelope text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Servicios de Email</h3>
+                        </div>
+                        <p class="text-gray-600">SendGrid, Mailchimp, Gmail API - envío masivo de correos, newsletters y notificaciones automatizadas.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-comments text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Comunicaciones</h3>
+                        </div>
+                        <p class="text-gray-600">Twilio, Slack, Discord - integración de SMS, llamadas, videollamadas y chat en tiempo real.</p>
+                    </div>
+                </div>
+                <div class="bg-orange-50 border-l-4 border-primary p-5 rounded-lg mt-6">
+                    <p class="text-gray-700">
+                        <strong class="text-primary text-lg">Ejemplos de APIs:</strong> Stripe API, Twilio API, SendGrid API, Google Drive API, Shopify API
+                    </p>
+                </div>
+            </div>
+
+            <!-- Plataformas Streaming -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-play-circle text-primary mr-3"></i>
+                    Plataformas Streaming
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                    Las APIs de plataformas de streaming permiten integrar contenido multimedia (video, audio, transmisiones en vivo) en aplicaciones web. Facilitan la reproducción, gestión de bibliotecas de contenido, personalización de experiencias de usuario y análisis de consumo de medios.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-video text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Video On Demand</h3>
+                        </div>
+                        <p class="text-gray-600">YouTube API, Vimeo API - integración de catálogos de videos, listas de reproducción y reproductores personalizados.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-music text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Streaming de Audio</h3>
+                        </div>
+                        <p class="text-gray-600">Spotify API, Apple Music API - acceso a millones de canciones, playlists y recomendaciones personalizadas.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-broadcast-tower text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Streaming en Vivo</h3>
+                        </div>
+                        <p class="text-gray-600">Twitch API, YouTube Live - transmisión en tiempo real de eventos, gaming, conferencias y webinars.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-film text-primary text-2xl mr-3"></i>
+                            <h3 class="font-bold text-gray-800 text-xl">Plataformas OTT</h3>
+                        </div>
+                        <p class="text-gray-600">APIs de Netflix, Disney+, HBO - gestión de contenido premium, perfiles de usuario y reproducción adaptativa.</p>
+                    </div>
+                </div>
+                <div class="bg-orange-50 border-l-4 border-primary p-5 rounded-lg mt-6">
+                    <p class="text-gray-700">
+                        <strong class="text-primary text-lg">Ejemplos de APIs:</strong> YouTube Data API, Spotify Web API, Twitch API, SoundCloud API, Wistia API
+                    </p>
+                </div>
+            </div>
+
         </div>
     </main>
 
@@ -158,6 +437,69 @@
             <p class="text-sm opacity-90">Aplicaciones Web a Servicios - 5to Semestre</p>
         </div>
     </footer>
+
+    <script>
+        let pdfFile = null;
+        let pdfURL = null;
+
+        // Manejar la selección del archivo
+        document.getElementById('pdfInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file && file.type === 'application/pdf') {
+                pdfFile = file;
+                
+                // Guardar en localStorage
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    localStorage.setItem('pdfDataU2', event.target.result);
+                    localStorage.setItem('pdfNameU2', file.name);
+                    showPDFSection(file.name);
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert('Por favor selecciona un archivo PDF válido');
+            }
+        });
+
+        // Mostrar sección con el PDF cargado
+        function showPDFSection(fileName) {
+            document.getElementById('pdfUploadSection').classList.add('hidden');
+            document.getElementById('pdfViewSection').classList.remove('hidden');
+            document.getElementById('pdfFileName').textContent = fileName;
+        }
+
+        // Ver el PDF
+        function viewPDF() {
+            const pdfData = localStorage.getItem('pdfDataU2');
+            if (pdfData) {
+                // Crear un blob y abrir en nueva ventana
+                const binary = atob(pdfData.split(',')[1]);
+                const array = new Uint8Array(binary.length);
+                for (let i = 0; i < binary.length; i++) {
+                    array[i] = binary.charCodeAt(i);
+                }
+                const blob = new Blob([array], { type: 'application/pdf' });
+                const url = URL.createObjectURL(blob);
+                window.open(url, '_blank');
+            }
+        }
+
+        // Cambiar PDF
+        function changePDF() {
+            document.getElementById('pdfUploadSection').classList.remove('hidden');
+            document.getElementById('pdfViewSection').classList.add('hidden');
+            document.getElementById('pdfInput').value = '';
+        }
+
+        // Verificar si hay un PDF guardado al cargar la página
+        window.addEventListener('load', function() {
+            const savedPDF = localStorage.getItem('pdfDataU2');
+            const savedName = localStorage.getItem('pdfNameU2');
+            if (savedPDF && savedName) {
+                showPDFSection(savedName);
+            }
+        });
+    </script>
 
 </body>
 </html>
